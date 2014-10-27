@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title= KiwiMT
+    link(rel="stylesheet", href="/stylesheets/style.css")
+    link(rel="stylesheet", href="/bootstrap/bootstrap.css")
+    link(rel="stylesheet", href="/stylesheets/main.css")
+
+  body
+    .container
+      .navbar.navbar-default
+        .container
+          .navbar-header
+            a.navbar-brand(href='/')= appname
+      .alert.alert-dismissable
+      h1= title
+      p Welcome KiwiMT;
+        |. Time is Limited.
+      block content
+  script(src='/javascripts/jquery.js', type="text/javascript")
+  script(src='/javascripts/main.js', type="text/javascript")
