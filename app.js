@@ -1,7 +1,5 @@
 //app.js
 //listen to 3000
-
-
 var express = require('express');
 var routes = require('./routes');
 var tasks = require('./routes/tasks');
@@ -9,22 +7,33 @@ var http = require('http');
 var path = require('path');
 var mongoskin = require('mongoskin');
 var db = mongoskin.db('mongodb://localhost:27017/todo?auto_reconnect', {safe:true});
+//add another database
+//using mongoskin to connect to testMongo
+var testMongo2 = mongoskin.db('mongodb://localhost:27017/testMongo2', {safe:true});
 var app = express();
 
 var favicon = require('serve-favicon'),
-  logger = require('morgan'),
-  bodyParser = require('body-parser'),
-  methodOverride = require('method-override'),
-  cookieParser = require('cookie-parser'),
-  session = require('express-session'),
-  csrf = require('csurf'),
-  errorHandler = require('errorhandler');
+    logger = require('morgan'),
+    bodyParser = require('body-parser'),
+    methodOverride = require('method-override'),
+    cookieParser = require('cookie-parser'),
+    session = require('express-session'),
+    csrf = require('csurf'),
+    errorHandler = require('errorhandler');
 
 app.use(function(req, res, next) {
   req.db = {};
   req.db.tasks = db.collection('tasks');
+  //add another databse;
+  //create a collections
+  req.testMongo2={};
+  req.testMongo2.busale2 = testMongo2.collection('busale2');
   next();
 })
+
+
+
+
 app.locals.appname = 'Express.js Todo App'
 app.locals.moment = require('moment');
 
