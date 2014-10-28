@@ -79,6 +79,10 @@ app.get('/timeline', function(req, res){
   res.render('timeline');
 });
 
+app.get('/test',function(req,res){
+  res.render('test');
+})
+
 
 app.get('/tasks', tasks.list);
 app.post('/tasks', tasks.markAllCompleted)

@@ -46,6 +46,7 @@ block content
           //- no support for DELETE method in forms
           //- http://amundsen.com/examples/put-delete-forms/
           //- so do XHR request instead from public/javascripts/main.js
+          span.taskdescription=task.taskdescription
         div.delete
-          a(class='btn btn-danger btn-xs task-delete', data-task-id=task._id.toString(), data-csrf=locals._csrf) delete
+          a(class='btn btn-danger btn-xs task-delete', data-task-id=task._id.toString(), data-csrf=locals._csrf) delete 
 

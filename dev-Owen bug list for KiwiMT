@@ -1,0 +1,49 @@
+dev-Owen bug list for KiwiMT
+I will write all the bugs+log about branch: dev-Owen
+the format of this file would be:	
+						-bug number:
+						-bug description:
+						-bug fixed-solution:
+
+
+
+
+bug number : bug-1
+bug description:
+I am trying to figure out how to write Jade 
+so I follow the tutorial on the website:
+http://cssdeck.com/labs/learning-the-jade-templating-engine-syntax
+
+The code is running on the website and it works.
+
+However, when I creat a jade file called: test.jade in KiwiMT
+and trying to run it(I change the beignning "!!! 5" to "doctype html"),
+it always has a bug called:
+
+unexpected text ;
+   6| style
+   7| body {
+ > 8| font-family: Verdana;
+   9| font-size: 13px;
+   10| background: #eee;
+   11| }
+
+ it seems someone in Github has the same situation like I do ,
+ the parser of jade has some problems:
+ https://github.com/jadejs/jade/issues/1347
+
+ I am trying to fix it.
+
+Bug solution: I am using two hours to check all the web and document.
+Nobody says anything about the inline css,
+I will facebook the author of Jade later.
+But right now, I am assuing you are not allowed to directly write internal 
+css in jade.
+
+
+
+
+
+
+
+
