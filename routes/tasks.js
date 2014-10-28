@@ -26,6 +26,7 @@ exports.add = function(req, res, next){
   req.db.tasks.save({
     name: req.body.name,
     createTime: new Date(),
+    taskdescription: "For testing",
     completed: false
   }, function(error, task){
     if (error) return next(error);
