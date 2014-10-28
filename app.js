@@ -71,10 +71,6 @@ app.param('task_id', function(req, res, next, taskId) {
 
 
 
-
-
-
-
 app.get('/', routes.index);
 
 //test for static TimeLine html

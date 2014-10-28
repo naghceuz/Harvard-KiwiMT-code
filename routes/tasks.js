@@ -10,6 +10,12 @@ exports.list = function(req, res, next){
       title: 'Todo List',
       tasks: tasks || []
     });
+
+    // res.render('timelineTest',{
+    //   title: 'Todo List in timelineTest.jade',
+    //   tasks: tasks || []
+    // });
+    
   });
 };
 
