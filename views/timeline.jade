@@ -1,0 +1,37 @@
+
+
+doctype html
+
+html
+  head
+    title= title
+    link(rel='stylesheet', href= '/stylesheets/dasky.min.css')
+    link(rel='stylesheet', href='/stylesheets/custom.css')
+    script(type='text/javascript' src="/javascripts/jquery.js")
+    script(type='text/javascript' src='/javascripts/dasky.eval.js' )
+    script(type='text/javascript' src='/javascripts/jmpress.js' )
+    script(type='text/javascript' src='/javascripts/custom.js' )
+    
+  body
+    #dasky     
+      .step.year
+        .dsk-titlenode Begin
+        .dsk-content
+          p.dsk-year-info  The Project Starts 
+      each task, index in tasks
+        .step
+          .dsk-circle tasks.name
+          h2.dsk-circle-title Task span=index+1  
+          .dsk-content
+            .dsk-info
+              h2 Task 1 
+              p Task 1 information : 
+                div.name
+                  span.name=tasks.name + ' (Created at: ' + moment(task.createTime).format("YYYY/MM/DD") + ')'
+               
+          
+
+
+
+
+       
