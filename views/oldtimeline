@@ -1,15 +1,19 @@
+
+
 doctype html
+
 html
-  head
-    title= title
-    link(rel='stylesheet', href= '/stylesheets/dasky.min.css')
-    link(rel='stylesheet', href='/stylesheets/custom.css')
-    script(type='text/javascript' src="/javascripts/jquery.js")
-    script(type='text/javascript' src='/javascripts/dasky.eval.js' )
-    script(type='text/javascript' src='/javascripts/jmpress.js' )
-    script(type='text/javascript' src='/javascripts/custom.js' )
-    
-  body
+head
+  title= title
+  link(rel='stylesheet', href= '/stylesheets/dasky.min.css')
+  link(rel='stylesheet', href='/stylesheets/custom.css')
+  script(type='text/javascript' src="/javascripts/jquery.js")
+  script(type='text/javascript' src='/javascripts/dasky.eval.js' )
+  script(type='text/javascript' src='/javascripts/jmpress.js' )
+  script(type='text/javascript' src='/javascripts/custom.js' )
+  
+body
+  
   #dasky
       .step.year
         .dsk-titlenode Begin
@@ -17,11 +21,14 @@ html
           p.dsk-year-info  The Project Starts 
       .step
         .dsk-circle Task 1
-        h2.dsk-circle-title Task 1
+        h2.dsk-circle-title Task 1  
         .dsk-content
           .dsk-info
-            h2 Task 1
-            p  Task 1 information  
+            h2 Task 1 
+            p  Task 1 information : 
+              each task, index in tasks
+                div.name
+                  span.name=tasks.name + ' (Created at: ' + moment(task.createTime).format("YYYY/MM/DD") + ')'
             a.dsk-link(href='#') 
       .step
         .dsk-circle Task 2

@@ -3,6 +3,9 @@
 var express = require('express');
 var routes = require('./routes');
 var tasks = require('./routes/tasks');
+
+var timeline = require('./routes/timeline');
+
 var http = require('http');
 var path = require('path');
 var mongoskin = require('mongoskin');
@@ -75,9 +78,6 @@ app.get('/', routes.index);
 
 //test for static TimeLine html
 
-app.get('/timeline', function(req, res){
-  res.render('timeline');
-});
 
 app.get('/test',function(req,res){
   res.render('test');
@@ -85,6 +85,11 @@ app.get('/test',function(req,res){
 
 
 app.get('/tasks', tasks.list);
+
+app.get('/timeline', tasks.list2);
+
+
+
 app.post('/tasks', tasks.markAllCompleted)
 app.post('/tasks', tasks.add);
 app.post('/tasks/:task_id', tasks.markCompleted);
