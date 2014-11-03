@@ -1,0 +1,100 @@
+KiwiMT 构思
+
+怎样的设计才是最有逻辑，最舒服的任务管理设计？
+
+每个用户都是独特的，所以一开始就要设计login和logout和独立的数据库
+
+
+本质上：人永远关心的是自己，然后才是他人
+
+
+
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+第一版本中：
+
+project的发起人一定要assign project, 其他人没有权限assign project
+(这背后的逻辑类似于微信群里面只有组长可以踢人，只有把权力明确才能更有效率，如果组里面每个人都有权力
+assign,就会造成非常混乱的局面)
+
+
+
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+
+现在这个组里面有4个人，A, B, C, D
+
+------------------------------------------ project页面的设计 -------------------------------------
+
+类似于wechat桌面端口，
+最左边是project的逻辑
+里层换个颜色，是project里面人的逻辑
+最上面永远是时间
+
+-------------------------------------------------------------------------------------------------
+
+A是发起人(发起人自己看自己project的界面必须要是金色的，土豪金嘛！)
+，A创建了一个project 名字叫：busale.com
+
+				在创建的这一步，A需要输入：
+											Project Name: busale.com
+											Project Date: Oct 16 - 2014
+														  Dec 25 - 2014
+
+												  [Generate] (generate button)
+
+												  这里最好有个小动画，告诉用户整体的构架
+												  是什么样子的
+												  然后假装有个loading的值，让用户以为这
+												  是等待时间
+
+
+				(因为最重要的逻辑是时间逻辑，而KiwiMT里面的
+				时间逻辑不同于普通Calendar里面的构架，
+				KiWiMT里面的时间逻辑都是按照一段一段算的）
+
+				现在A所在的界面：
+							上面是日历
+							下面是三个Period 
+
+				三个Period
+				A 可以点击第一个Period, 然后输入开始日期和结束日期，然后在右边有edit task
+				点击之后就进入了一个类似todo list 的输入界面
+
+				A必须要选择一段时间，然后输入as a group 需要完成的tasks
+
+				就拿busale.com来说Oct 16 - Oct 23 的task就有:	
+					a.Choose one of your use cases and create a diagram showing the major classes/objects that will be used in the solution.
+					b.Develop a flow diagram for one of your high-level use cases
+					c.Complete the use case template for your remaining use cases. 
+
+			    好了A现在建立完了
+			    
+			    现在A可以邀请好友
+			    A根据user id(也就是用户名，每个人都是独一无二的数字，就像最早qq号的命名方式，或者陌陌的命名方式), 
+			    添加了： B,C, D
+
+			    假设B,C,D都答应了进入了project 
+
+			    那么project页面的最左边就会出现B, C, D的名字
+
+			    然后A作为组长就可以连线，比如 可以拿鼠标选择 任务a 然后连接 C
+
+				
+
+
+
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+
+
+
+场景二：普通用户在已经有project的时候登陆
+
+login之后，显示的是不同的project, 就算只有一个project，你也要选择（为了整体上有更清晰的逻辑）
+
+进入project之后，你可以
+
+
+
+所以登陆的时候
+主页应该是个人的todolist 的一个输入，
+然后有个按钮，进入到整个队伍的输入
+最初的最初，有个建立project的输入
